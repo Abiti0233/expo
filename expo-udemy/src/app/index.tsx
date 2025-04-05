@@ -12,43 +12,43 @@ const index = () => {
       </View>
 
       {/* メモ一覧 */}
-      <View>
+      <View style={styles.memoLists}>
 
         {/* 個別のメモ */}
-        <View>
+        <View style={styles.memoListItem}>
           <View>
-            <Text>買い物リスト</Text>
-            <Text>2025/4/5 10:00</Text>
+            <Text style={styles.memoListItemTitle}>買い物リスト</Text>
+            <Text style={styles.memoListItemDate}>2025/4/5 10:00</Text>
           </View>
           <View>
             <Text>×</Text>
           </View>
         </View>
 
-        <View>
+        <View style={styles.memoListItem}>
           <View>
-            <Text>買い物リスト</Text>
-            <Text>2025/4/5 10:00</Text>
+            <Text style={styles.memoListItemTitle}>買い物リスト</Text>
+            <Text style={styles.memoListItemDate}>2025/4/5 10:00</Text>
           </View>
           <View>
             <Text>×</Text>
           </View>
         </View>
 
-        <View>
+        <View style={styles.memoListItem}>
           <View>
-            <Text>買い物リスト</Text>
-            <Text>2025/4/5 10:00</Text>
+            <Text style={styles.memoListItemTitle}>買い物リスト</Text>
+            <Text style={styles.memoListItemDate}>2025/4/5 10:00</Text>
           </View>
           <View>
             <Text>×</Text>
           </View>
         </View>
 
-        <View>
+        <View style={styles.memoListItem}>
           <View>
-            <Text>買い物リスト</Text>
-            <Text>2025/4/5 10:00</Text>
+            <Text style={styles.memoListItemTitle}>買い物リスト</Text>
+            <Text style={styles.memoListItemDate}>2025/4/5 10:00</Text>
           </View>
           <View>
             <Text>×</Text>
@@ -56,8 +56,8 @@ const index = () => {
         </View>
       </View>
 
-      <View>
-        <Text>＋</Text>
+      <View style={styles.circleButton}>
+        <Text style={styles.circleButtonLabel}>＋</Text>
       </View>
     </View>
   );
@@ -90,5 +90,53 @@ const styles = StyleSheet.create({
     right: 16,
     bottom: 16,
     color: "rgba(255, 255, 255, 0.7)",
-  }
+  },
+  memoLists: {
+    flex: 1,
+    backgroundColor: "white",
+  },
+  memoListItem: {
+    paddingHorizontal: 19,
+    paddingVertical: 16,
+    backgroundColor: "white",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderBottomWidth: 1,
+    borderBottomColor: "rgba(0, 0, 0, 0.15)",
+  },
+  memoListItemTitle: {
+    fontSize: 16,
+    lineHeight: 32,
+    fontWeight: "bold",
+  },
+  memoListItemDate: {
+    fontSize: 12,
+    lineHeight: 16,
+    color: "#A0A3AD",
+  },
+  circleButton: {
+    position: "absolute",
+    bottom: 26,
+    right: 26,
+    width: 64,
+    height: 64,
+    borderRadius: 32,
+    backgroundColor: "#467FD3",
+    justifyContent: "center",
+    alignItems: "center",
+    shadowColor: "rgba(0, 0, 0, 0.7)",
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
+    shadowOpacity: 0.35,
+    shadowRadius: 8,
+    zIndex: 10,
+  },
+  circleButtonLabel: {
+    color: "white",
+    fontSize: 40,
+  },
+
 });
