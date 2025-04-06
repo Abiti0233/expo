@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, type ViewStyle } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, type ViewStyle } from "react-native";
 
 type CircleButtonProps = {
   children: React.ReactNode;
@@ -7,9 +7,9 @@ type CircleButtonProps = {
 
 export const CircleButton = ({ children, style }: CircleButtonProps) => {
   return (
-    <View style={[styles.circleButton, style]}>
+    <TouchableOpacity style={[styles.circleButton, style]}>
       <Text style={styles.circleButtonLabel}>{children}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

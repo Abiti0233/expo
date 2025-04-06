@@ -1,10 +1,15 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function Button({label}: {label: string}) {
+type ButtonProps = {
+  label: string;
+  onPress?: () => void;
+};
+
+export default function Button({ label, onPress }: ButtonProps) {
   return (
-    <View style={styles.Button}>
+    <TouchableOpacity style={styles.Button} onPress={onPress}>
       <Text style={styles.ButtonLabel}>{label}</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -13,13 +18,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#467FD3",
     borderRadius: 4,
     alignSelf: "flex-start",
-    marginBottom: 24
+    marginBottom: 24,
   },
   ButtonLabel: {
     color: "#ffffff",
     fontSize: 16,
     lineHeight: 32,
     paddingVertical: 8,
-    paddingHorizontal: 24
+    paddingHorizontal: 24,
   },
-})
+});

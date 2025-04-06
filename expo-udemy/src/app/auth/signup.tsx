@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
+import { Link } from "expo-router";
 import { Header } from "../../components/layout/header";
 import Button from "../../components/ui/Button";
 
@@ -13,7 +20,11 @@ export default function SignUp() {
         <Button label={"Submit"} />
         <View style={styles.footer}>
           <Text style={styles.footerText}>Already registered?</Text>
-          <Text style={styles.footerLink}>Log In.</Text>
+          <Link href="/auth/login" asChild>
+            <TouchableOpacity>
+              <Text style={styles.footerLink}>Log In.</Text>
+            </TouchableOpacity>
+          </Link>
         </View>
       </View>
     </View>
