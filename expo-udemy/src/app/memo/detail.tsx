@@ -2,8 +2,12 @@ import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Header } from "../../components/layout/header";
 import { CircleButton } from "../../components/circleButton";
 import Icon from "../../components/icon";
+import { router } from "expo-router";
 
 export default function Detail() {
+  const handlePress = () => {
+    router.push("/memo/edit");
+  }
   return (
     <View style={styles.container}>
       <Header />
@@ -22,7 +26,7 @@ export default function Detail() {
           ダミーテキストはダミー文書やダミー文章とも呼ばれることがあります。カタカナ語が苦手な方は「組見本」と呼ぶとよいでしょう。主に書籍やウェブページなどのデザインを作成する時によく使われます。これは正式な文章の代わりに入れて使うダミーテキストです。
         </Text>
       </ScrollView>
-      <CircleButton style={{ top: 160, bottom: "auto" }}>
+      <CircleButton onPress={handlePress} style={{ top: 160, bottom: "auto" }}>
         <Icon name="pencil" size={40} color="white" />
       </CircleButton>
     </View>

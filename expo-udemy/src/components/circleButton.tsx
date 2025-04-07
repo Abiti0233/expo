@@ -3,11 +3,12 @@ import { View, Text, StyleSheet, TouchableOpacity, type ViewStyle } from "react-
 type CircleButtonProps = {
   children: React.ReactNode;
   style?: ViewStyle;
+  onPress?: () => void;
 };
 
-export const CircleButton = ({ children, style }: CircleButtonProps) => {
+export const CircleButton = ({ children, style, onPress }: CircleButtonProps) => {
   return (
-    <TouchableOpacity style={[styles.circleButton, style]}>
+    <TouchableOpacity onPress={onPress} style={[styles.circleButton, style]}>
       <Text style={styles.circleButtonLabel}>{children}</Text>
     </TouchableOpacity>
   );
